@@ -6,8 +6,11 @@ import requests
 import json
 import sys
 
-if sys.argv[1] is not None:
-    user_id = eval(sys.argv[1])
+try:
+    if sys.argv[1] is not None:
+        user_id = eval(sys.argv[1])
+except IndexError:
+    exit(1)
 
 API_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
 employee_API = requests.get(API_url)
@@ -17,7 +20,10 @@ todo_API = requests.get(f"https://jsonplaceholder.typicode.com/todos/")
 todo_list = todo_API.text
 todo_list = json.loads(todo_list)
 
-employee_name = employee_data['name']
+try:
+    employee_name = employee_data['name']
+except KeyError:
+    exit(1)
 completed_tasks = []
 user_todo_list = [todo for todo in todo_list if todo['userId'] == user_id]
 
