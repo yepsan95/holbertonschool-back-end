@@ -8,8 +8,10 @@ import sys
 
 try:
     if sys.argv[1] is not None:
-        user_id = eval(sys.argv[1])
+        user_id = int(sys.argv[1])
 except IndexError:
+    exit(1)
+except ValueError:
     exit(1)
 
 API_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
