@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-Exports data from a employee in CSV format.
+"""Exports data from a employee in CSV format.
 The file name will be: 'USER_ID.csv'.
 """
 import csv

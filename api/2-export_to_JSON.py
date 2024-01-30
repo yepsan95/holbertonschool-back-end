@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-Exports data from a employee in JSON format.
+"""Exports data from a employee in JSON format.
 The file name will be: 'USER_ID.json'.
 """
 import json
