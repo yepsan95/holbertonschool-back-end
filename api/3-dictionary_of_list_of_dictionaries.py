@@ -2,8 +2,8 @@
 """Exports data from a employee in JSON format.
 The file name will be: 'USER_ID.json'.
 """
-import requests
 import json
+import requests
 
 API_url = f"https://jsonplaceholder.typicode.com/users/"
 all_users_API = requests.get(API_url)
